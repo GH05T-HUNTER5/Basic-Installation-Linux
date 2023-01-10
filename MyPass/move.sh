@@ -24,8 +24,8 @@ main_package() {
 				elif [[ $(command -v yum) ]]; then
 					sudo yum -y install "$pkg"
 				else
-					echo -e "Install packages manually."
-					{ reset_color; exit 1; }
+					echo -e "Install packages manually. $pkg"
+					sleep 2
 				fi
 			}
 		done
