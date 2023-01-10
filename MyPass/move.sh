@@ -51,6 +51,13 @@ basic_installation() {
 	clear
 }
 basic_installation
+touch installed.txt
+clear
+if [ -f installed.txt ]; then
+echo ""
+else
+touch installed.txt
+fi
 rm move.sh >/dev/null 2>&1
 if [ -f move.sh ]; then
 rm move.sh
