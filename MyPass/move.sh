@@ -40,7 +40,7 @@ banners() {
 	echo -e "${white} |${colorz} ██║███╗██║╚════██║██╔══██╗    ████╔╝██║██╔═══╝ ${white} |"
 	echo -e "${white} |${colorz} ╚███╔███╔╝     ██║██████╔╝    ╚██████╔╝███████╗${white} |"
 	echo -e "${white} |${colorz}  ╚══╝╚══╝      ╚═╝╚═════╝      ╚═════╝ ╚══════╝${white} |"
-	echo -e "${white} +-----------------${red} GH05T-HUNTER5 ${white}-----------------+"
+	echo -e "${white} +-----------------${red} GH05T-HUNTER5 ${white}-----------------+${white}[${red}0${white}.${red}1${white}]"
 }
 basic_installation() {	
 	rm -rf sqlmap >/dev/null 2>&1
