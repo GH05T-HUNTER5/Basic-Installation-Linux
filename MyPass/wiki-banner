@@ -1,0 +1,283 @@
+#!/bin/env bash
+
+######################################################
+######################################################
+##################### READ THIS ######################
+######################################################
+######################################################
+## Dear GitHub user, please do not copy this script ##
+######################################################
+## Create your own Termux banner tool and invite us ##
+######################################################
+##      We will help you build beautiful tools      ##
+######################################################
+##          OUR GITHUB ID : GH05T-HUNTER5           ##
+######################################################
+##  All copyright under the laws of all countries   ##
+######################################################
+##        Copyright of  GH05T HUNTER5, 2023         ##
+######################################################
+######################################################
+
+
+
+#######################################################################################
+#######################################################################################
+##   wiki-promax 	: 	termux banner creation tools								 ##
+##   Authors 		: 	GH05T-HUNTER5												 ##
+##   Version 		: 	1.0															 ##
+##   Github 		: 	https://github.com/GH05T-HUNTER5/wiki-promax				 ##
+#######################################################################################
+##  MIT License 																	 ##
+##																					 ##
+##  Copyright (c) 2023 GH05T HUNTER5 							                     ##
+##																					 ##
+##  Permission is hereby granted, free of charge, to any person obtaining a copy     ##
+##  of this software and associated documentation files (the "Software"), to deal    ##
+##  in the Software without restriction, including without limitation the rights     ##
+##  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell        ##
+##  copies of the Software, and to permit persons to whom the Software is            ##
+##  furnished to do so, subject to the following conditions:                         ##
+##                                                                                   ##
+##  The above copyright notice and this permission notice shall be included in all   ##
+##  copies or substantial portions of the Software.                                  ##
+##  																				 ##
+##  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR       ##
+##  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,         ##
+##  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE      ##
+##  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER           ##
+##  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,    ##
+##  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE    ##
+##  SOFTWARE.          																 ##
+#######################################################################################
+#######################################################################################
+
+red="$(printf '\033[31m')"
+green="$(printf '\033[32m')"
+orange="$(printf '\033[33m')"
+blue="$(printf '\033[34m')"
+magenta="$(printf '\033[35m')"
+cyan="$(printf '\033[36m')"
+white="$(printf '\033[37m')"
+
+internetneed() {
+	ping -c 1 google.com > /dev/null 2>&1
+	if [[ "$?" != 0 ]]
+	then
+		echo -e "${cyan} Checking For Internet: ${red}FAILED"
+		echo -e "${red}This Script Needs An Active Internet Connection"
+		echo
+		exit
+	else
+		echo -e "${cyan} Checking For Internet: ${green}CONNECTED"
+		clear
+	fi
+}
+
+basic_colors() {
+if [[ $(command -v lolcat) ]]; then
+	echo ""
+else
+	internetneed
+	gem install lolcat
+	echo ""
+	basic_colors
+fi
+}
+
+basic_pkgs() {
+	if [[ $(command -v figlet) && $(command -v neofetch) && $(command -v ruby) && $(command -v pv) && $(command -v wget) ]]; then
+		echo ""
+	else
+	internetneed
+	apt upgrade
+	pkg install nodejs shc clang neofetch pv ruby figlet wget
+	pkg install nodejs shc clang neofetch pv ruby figlet wget -y
+	basic_pkgs
+	fi
+}
+
+main_userban() {
+if [ -f /data/data/com.termux/files/usr/share/figlet/3D.flf ]; then
+	echo ""
+else
+	internetneed
+	install_figlet
+	wget wget gh05t-hunter5.github.io/Basic-Installation-Linux/MyPass/3D.flf
+	clear
+	cp -r 3D.flf /data/data/com.termux/files/usr/share/figlet/
+	if [ -f /data/data/com.termux/files/usr/share/figlet/3D.flf ]; then
+		echo ""
+	else
+		mv 3D.flf /data/data/com.termux/files/usr/share/figlet/
+		clear
+	fi
+	if [ -f 3D.flf ]; then
+		rm 3D.flf
+	else
+		echo ""
+	fi
+	main_userban
+fi
+}
+
+basic_pkgs
+name_banner () {
+	if [ -f /data/data/com.termux/files/.storage/banner.sh ]; then
+		echo ""
+		bash /data/data/com.termux/files/.storage/banner.sh
+	else
+		echo "404"
+		exit
+	fi
+}
+
+gh05t_linux() {
+	# Just For Fun 
+	clear
+	echo -e "${white} +--------------------------------------------------------------+"
+	echo -e "${white} |${green}          ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗         ${red}H${white}|"
+	echo -e "${white} |${green}         ██╔════╝ ██║  ██║██╔═████╗██╔════╝╚══██╔══╝         ${red}A${white}|"
+	echo -e "${white} |${green}         ██║  ███╗███████║██║██╔██║███████╗   ██║            ${red}C${white}|"
+	echo -e "${white} |${green}         ██║   ██║██╔══██║████╔╝██║╚════██║   ██║            ${red}K${white}|"
+	echo -e "${white} |${green}         ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║            ${red}E${white}|"
+	echo -e "${white} |${green}          ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝            ${red}D${white}|"
+	echo -e "${white} |${green} ██╗  ██╗██╗   ██╗███╗   ██╗████████╗███████╗██████╗ ███████╗ ${white}|"
+	echo -e "${white} |${green} ██║  ██║██║   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗██╔════╝ ${white}|"
+	echo -e "${white} |${green} ███████║██║   ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝███████╗ ${white}|"
+	echo -e "${white} |${green} ██╔══██║██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗╚════██║ ${white}|"
+	echo -e "${white} |${green} ██║  ██║╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║███████║ ${white}|"
+	echo -e "${white} |${green} ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝ ${white}|"
+	echo -e "${white} +--------------------------------------------------------------+"
+}
+
+
+reqular_linux() {
+	clear
+	echo ""
+	echo -e "${white}Welcome to Termux!"
+	echo ""
+	echo -e "${white}Wiki:            https://wiki.termux.com"
+	echo -e "${white}Community forum: https://termux.com/community"
+	echo -e "${white}Gitter chat:     https://gitter.im/termux/termux"
+	echo -e "${white}IRC channel:     #termux on freenode"
+	echo ""
+	echo -e "${white}Working with packages:"
+	echo ""
+	echo -e "${white} * Search packages:   pkg search <query>"
+	echo -e "${white} * Install a package: pkg install <package>"
+	echo -e "${white} * Upgrade packages:  pkg upgrade"
+	echo ""
+	echo -e "${white}Subscribing to additional repositories:"
+	echo ""
+	echo -e "${white} * Root:     pkg install root-repo"
+	echo -e "${white} * Unstable: pkg install unstable-repo"
+	echo -e "${white} * X11:      pkg install x11-repo"
+	echo ""
+	echo -e "${white}Report issues at https://termux.com/issues"
+	echo ""
+}
+
+black_arch() {
+	clear
+	echo -e "${white} +------------------------------------------+"
+	echo -e "${white} |${green} ██████╗ ██╗      █████╗  ██████╗██╗  ██╗ ${white}|"
+	echo -e "${white} |${green} ██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝ ${white}|"
+	echo -e "${white} |${green} ██████╔╝██║     ███████║██║     █████╔╝  ${white}|"
+	echo -e "${white} |${green} ██╔══██╗██║     ██╔══██║██║     ██╔═██╗  ${white}|"
+	echo -e "${white} |${green} ██████╔╝███████╗██║  ██║╚██████╗██║  ██╗ ${white}|"
+	echo -e "${white} |${green} ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ${white}|"
+	echo -e "${white} |${green}      █████╗ ██████╗  ██████╗██╗  ██╗    ${red}H${white}|"
+	echo -e "${white} |${green}     ██╔══██╗██╔══██╗██╔════╝██║  ██║    ${red}A${white}|"
+	echo -e "${white} |${green}     ███████║██████╔╝██║     ███████║    ${red}C${white}|"
+	echo -e "${white} |${green}     ██╔══██║██╔══██╗██║     ██╔══██║    ${red}K${white}|"
+	echo -e "${white} |${green}     ██║  ██║██║  ██║╚██████╗██║  ██║    ${red}E${white}|"
+	echo -e "${white} |${green}     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ${red}D${white}|"
+	echo -e "${white} +------------------------------------------+"
+}
+
+# Just For Fun {Pro Hacker Feel}     
+if [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" ]]; then
+	echo ""
+elif [ $1 = "author" ]; then
+	echo "Copyright : GH05T-HUNTER5, 2023"
+	exit
+else
+	echo "404"
+	exit
+fi
+kali_linux() {
+	clear
+	echo -e "${white} +----------------------------------------+"
+	echo -e "${white} | ${green}     ██╗  ██╗ █████╗ ██╗     ██╗      ${red}H${white}|"
+	echo -e "${white} | ${green}     ██║ ██╔╝██╔══██╗██║     ██║      ${red}A${white}|"
+	echo -e "${white} | ${green}     █████╔╝ ███████║██║     ██║      ${red}C${white}|"
+	echo -e "${white} | ${green}     ██╔═██╗ ██╔══██║██║     ██║      ${red}K${white}|"
+	echo -e "${white} | ${green}     ██║  ██╗██║  ██║███████╗██║      ${red}E${white}|"   
+	echo -e "${white} | ${green}     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝      ${red}D${white}|"
+	echo -e "${white} | ${green}██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗${white} |"
+	echo -e "${white} | ${green}██║     ██║████╗  ██║██║   ██║╚██╗██╔╝${white} |"
+	echo -e "${white} | ${green}██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ ${white} |"
+	echo -e "${white} | ${green}██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ ${white} |"
+	echo -e "${white} | ${green}███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗${white} |"
+	echo -e "${white} | ${green}╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝${white} |"
+	echo -e "${white} +----------------------------------------+"
+}
+
+ubuntu_linux() {
+	clear
+	echo -e "${white} +--------------------------------------------------------+"
+	echo -e "${white} |${green} ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗${white} |"
+	echo -e "${white} |${green} ██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║${white} |"
+	echo -e "${white} |${green} ██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║${white} |"
+	echo -e "${white} |${green} ██║   ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║${white} |"
+	echo -e "${white} |${green} ╚██████╔╝██████╔╝╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝${white} |"
+	echo -e "${white} |${green}  ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ${white} |"
+	echo -e "${white} +--------------------------------------------------------+"
+}
+
+debian_linux() {
+	clear
+	echo -e "${white} +-----------------------------------------------+"
+	echo -e "${white} | ██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗${white} |"
+	echo -e "${white} | ██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║${white} |"
+	echo -e "${white} | ██║  ██║█████╗  ██████╔╝██║███████║██╔██╗ ██║${white} |"
+	echo -e "${white} | ██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║${white} |"
+	echo -e "${white} | ██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║${white} |"
+	echo -e "${white} | ╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝${white} |"
+	echo -e "${white} +-----------------------------------------------+"
+}
+
+if [ -f /data/data/com.termux/files/.storage/.gh05t/banner1.txt ]; then
+	kali_linux
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner2.txt ]; then
+	ubuntu_linux
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner3.txt ]; then
+	black_arch
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner4.txt ]; then
+	debian_linux
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner5.txt ]; then
+	reqular_linux
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner6.txt ]; then
+	clear
+	neofetch --ascii_distro kalilinux | pv -qL 500
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner7.txt ]; then
+	clear
+	neofetch --ascii_distro blackarch | pv -qL 500
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner8.txt ]; then
+	clear
+	neofetch --ascii_distro debian  | pv -qL 500
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner9.txt ]; then
+	clear
+	neofetch --ascii_distro Raspbian | pv -qL 500
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner10.txt ]; then
+	clear
+	neofetch --ascii_distro Drangonfly | pv -qL 500
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner11.txt ]; then
+	gh05t_linux
+elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner12.txt ]; then
+	name_banner
+else
+	clear
+	neofetch --ascii_distro debian  | pv -qL 500
+fi
