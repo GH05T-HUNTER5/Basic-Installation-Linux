@@ -196,16 +196,8 @@ black_arch() {
 	echo -e "${white} +------------------------------------------+"
 }
 
-# Just For Fun {Pro Hacker Feel}     
-if [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" ]]; then
-	echo ""
-elif [ $1 = "author" ]; then
-	echo "Copyright : GH05T-HUNTER5, 2023"
-	exit
-else
-	echo "404"
-	exit
-fi
+# Just For Fun {Pro Hacker Feel}
+
 kali_linux() {
 	clear
 	echo -e "${white} +----------------------------------------+"
@@ -248,6 +240,42 @@ debian_linux() {
 	echo -e "${white} +-----------------------------------------------+"
 }
 
+if [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "1" ]]; then
+	kali_linux
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "2" ]]; then
+	ubuntu_linux
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "3" ]]; then
+	black_arch
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "4" ]]; then
+	debian_linux
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "5" ]]; then
+	reqular_linux
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "6" ]]; then
+	clear
+	neofetch --ascii_distro kalilinux | pv -qL 500
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "7" ]]; then
+	neofetch --ascii_distro blackarch | pv -qL 500
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "8" ]]; then
+	clear
+	neofetch --ascii_distro debian  | pv -qL 500
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "9" ]]; then
+	clear
+	neofetch --ascii_distro Raspbian | pv -qL 500
+	exit
+elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "10" ]]; then
+	clear
+	neofetch --ascii_distro Drangonfly | pv -qL 500
+	exit
+else
+	echo ""
+fi
 if [ -f /data/data/com.termux/files/.storage/.gh05t/banner1.txt ]; then
 	kali_linux
 elif [ -f /data/data/com.termux/files/.storage/.gh05t/banner2.txt ]; then
