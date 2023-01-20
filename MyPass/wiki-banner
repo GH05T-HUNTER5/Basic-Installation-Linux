@@ -260,7 +260,9 @@ elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "6" ]]; t
 	neofetch --ascii_distro kalilinux | pv -qL 500
 	exit
 elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "7" ]]; then
+	clear
 	neofetch --ascii_distro blackarch | pv -qL 500
+	exit
 elif [[ $1 = "--password" && $2 = "wiki" && $3 = "wiki-promax" && $4 = "8" ]]; then
 	clear
 	neofetch --ascii_distro debian  | pv -qL 500
