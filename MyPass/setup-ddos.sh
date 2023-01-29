@@ -1,29 +1,3 @@
-rm -rf demo
-if [ -d demo ]; then
-	rm -r demo
-else
-	echo ""
-fi
-git clone https://github.com/cyweb/hammer >/dev/null 2>&1
-if [ -d hammer ]; then
-	echo ""
-else
-	git clone https://github.com/cyweb/hammer
-fi
-mv hammer demo
-if [ -d hammer ]; then
-	mv -f hammer demo
-else
-	echo ""
-fi
-touch demo/installed
-rm setup-ddos.sh
-if [ -f setup-ddos.sh ]; then
-	rm setup-ddos.sh
-else
-	echo ""
-fi
-if [ -d hammer ]; then
-	rm -rf hammer
-fi
-clear 
+z="
+";Az='rm -';Fz='demo';tz='rm s';iz='mv h';Nz='fi';Gz=' ]; ';Vz='/cyw';Cz='emo';xz=' -f ';Yz='r >/';Uz='.com';vz='-ddo';Jz='mo';Tz='thub';Dz='if [';Hz='then';Rz='tps:';Sz='//gi';cz='1';dz='hamm';Bz='rf d';Qz='e ht';FBz='rf h';nz='o';pz='h de';az='null';Wz='eb/h';Xz='amme';jz='mv -';gz='en';rz='nsta';sz='lled';Ez=' -d ';Oz='git ';mz=' dem';bz=' 2>&';oz='touc';ez='er ]';yz='setu';qz='mo/i';ABz='p-dd';Mz=' ""';CBz='h ];';Zz='dev/';lz='mmer';hz='r';Kz='else';kz='f ha';uz='etup';Iz='r de';BBz='os.s';fz='; th';GBz='clea';Pz='clon';DBz=' the';wz='s.sh';Lz='echo';EBz='n';
+eval "$Az$Bz$Cz$z$Dz$Ez$Fz$Gz$Hz$z$Az$Iz$Jz$z$Kz$z$Lz$Mz$z$Nz$z$Oz$Pz$Qz$Rz$Sz$Tz$Uz$Vz$Wz$Xz$Yz$Zz$az$bz$cz$z$Dz$Ez$dz$ez$fz$gz$z$Lz$Mz$z$Kz$z$Oz$Pz$Qz$Rz$Sz$Tz$Uz$Vz$Wz$Xz$hz$z$Nz$z$iz$Xz$Iz$Jz$z$Dz$Ez$dz$ez$fz$gz$z$jz$kz$lz$mz$nz$z$Kz$z$Lz$Mz$z$Nz$z$oz$pz$qz$rz$sz$z$tz$uz$vz$wz$z$Dz$xz$yz$ABz$BBz$CBz$DBz$EBz$z$tz$uz$vz$wz$z$Kz$z$Lz$Mz$z$Nz$z$Dz$Ez$dz$ez$fz$gz$z$Az$FBz$Xz$hz$z$Nz$z$GBz$hz"
