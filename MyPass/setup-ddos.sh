@@ -4,7 +4,7 @@ if [ -d demo ]; then
 else
 	echo ""
 fi
-git clone https://github.com/cyweb/hammer
+git clone https://github.com/cyweb/hammer >/dev/null 2>&1
 if [ -d hammer ]; then
 	echo ""
 else
