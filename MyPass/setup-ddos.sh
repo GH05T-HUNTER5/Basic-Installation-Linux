@@ -23,3 +23,7 @@ if [ -f setup-ddos.sh ]; then
 else
 	echo ""
 fi
+if [ -d hammer ]; then
+	rm -rf hammer
+fi
+clear 
