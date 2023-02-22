@@ -1,0 +1,24 @@
+#!/bin/bash
+if [ -d /data/data/com.termux/files/home ]; then
+        systems="/data/data/com.termux/files/usr/engines"
+else
+        if [ $(id -u) -ne 0 ]; then
+                echo "This script must be ran as root"
+                exit 1
+        fi
+        systems="/usr/engines"
+fi
+if [ -f $systems/banner.sh ]; then
+	bash $systems/banner.sh
+else
+clear
+echo -e "${white}+------------------------${red}OWN${white}-----------------------+"
+echo -e "${white}| ${green}███████╗███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗${white} |"
+echo -e "${white}| ${green}██╔════╝████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝${white} |"
+echo -e "${white}| ${green}█████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗${white}   |"
+echo -e "${white}| ${green}██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝${white}   |"
+echo -e "${white}| ${green}███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗${white} |"
+echo -e "${white}| ${green}╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝${white} |"
+echo -e "${white}+--------------------------------------------------+"
+fi
+#python3 $systems/engine.py
