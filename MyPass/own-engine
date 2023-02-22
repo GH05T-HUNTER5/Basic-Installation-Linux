@@ -1,4 +1,8 @@
 #!/bin/bash
+red='\033[0;31m'    
+green='\033[0;32m'    
+cyan='\033[0;36m'    
+white='\033[1;37m'
 if [ -d /data/data/com.termux/files/home ]; then
         systems="/data/data/com.termux/files/usr/engines"
 else
@@ -8,10 +12,6 @@ else
         fi
         systems="/usr/engines"
 fi
-if [ -f $systems/banner.sh ]; then
-	bash $systems/banner.sh
-else
-clear
 echo -e "${white}+------------------------${red}OWN${white}-----------------------+"
 echo -e "${white}| ${green}███████╗███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗${white} |"
 echo -e "${white}| ${green}██╔════╝████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝${white} |"
@@ -20,5 +20,6 @@ echo -e "${white}| ${green}██╔══╝  ██║╚██╗██║█
 echo -e "${white}| ${green}███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗${white} |"
 echo -e "${white}| ${green}╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝${white} |"
 echo -e "${white}+--------------------------------------------------+"
-fi
-#python3 $systems/engine.py
+echo -e "${white}|${cyan}          Search and discover new ideas ${white}          |"
+echo -e "${white}+--------------------------------------------------+"
+python3 $systems/engine.py
